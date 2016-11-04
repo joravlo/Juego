@@ -10,12 +10,16 @@
     <unique-id>31rizu5lf2bxv</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -44,12 +48,17 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="TiledBackground" sid="660803168055639">
+        <object-type name="fondo1" sid="660803168055639">
             <plugin id="TiledBg" />
             <texture original-source="D:\Bibliotecas Jordi\Desktop\thumb_COLOURBOX10591707.jpg" />
         </object-type>
-        <object-type name="Sprite" sid="673642602859101">
+        <object-type name="suelo" sid="673642602859101">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="295456285744152">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="822412758563706" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\Suelo1.png">
@@ -65,19 +74,198 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite2" sid="850839384147543">
+        <object-type name="Prota" sid="850839384147543">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Platform" sid="514342712799851">
                     <behavior id="Platform" />
                 </behavior-type>
-                <behavior-type name="BoundToLayout" sid="190505052364700">
+                <behavior-type name="ScrollTo" sid="697645914685734">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="218950449193893">
                     <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="285401926141288" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.532258" hotspotY="0.516949" original-source="C:\Users\2dam\Downloads\Prota4.png">
+                        <collision-poly>
+                            <point x="0.209677" y="0.110169" />
+                            <point x="0.532258" y="0.110169" />
+                            <point x="0.725806" y="0.177966" />
+                            <point x="0.983871" y="0.516949" />
+                            <point x="0.532258" y="0.754237" />
+                            <point x="0.532258" y="0.991525" />
+                            <point x="0.209677" y="0.923729" />
+                            <point x="0.145161" y="0.516949" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="salto" pingpong="0" repeatcount="1" repeatto="0" sid="432842191323690" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.581967" original-source="C:\Users\2dam\Downloads\Prota salto.png">
+                        <collision-poly>
+                            <point x="0.375" y="0.111111" />
+                            <point x="0.5" y="0.0555556" />
+                            <point x="0.958333" y="0.555556" />
+                            <point x="0.333333" y="0.833333" />
+                            <point x="0.5" y="0.833333" />
+                            <point x="0.583333" y="0.888889" />
+                            <point x="0.0833333" y="0.555556" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Hamburguesa" sid="296327002151443">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="694142169774427" speed="5">
+                    <frame duration="1" hotspotX="0.733333" hotspotY="0.625" original-source="C:\Users\2dam\Downloads\Hamburguesa.png">
+                        <collision-poly>
+                            <point x="0.2" y="0.125" />
+                            <point x="0.733333" y="0.125" />
+                            <point x="0.866667" y="0.5" />
+                            <point x="0.933333" y="0.625" />
+                            <point x="0.933333" y="0.8125" />
+                            <point x="0.733333" y="0.9375" />
+                            <point x="0.4" y="0.9375" />
+                            <point x="0.0666667" y="0.625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="caratriste" sid="552675010137648">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838840936463025" speed="5">
+                    <frame duration="1" hotspotX="0.588235" hotspotY="0.588235" original-source="C:\Users\2dam\Downloads\New Piskel (1).png">
+                        <collision-poly>
+                            <point x="0.176471" y="0.176471" />
+                            <point x="0.588235" y="0.0588235" />
+                            <point x="0.882353" y="0.294118" />
+                            <point x="0.941176" y="0.588235" />
+                            <point x="0.823529" y="0.823529" />
+                            <point x="0.588235" y="0.941176" />
+                            <point x="0.294118" y="0.882353" />
+                            <point x="0.0588235" y="0.588235" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="manzana" sid="218019321264568">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="715686710314091" speed="5">
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.625" original-source="C:\Users\2dam\Desktop\Juego MC\Juego\assets\manzana.png">
+                        <collision-poly>
+                            <point x="0.0666667" y="0.125" />
+                            <point x="0.6" y="0.0625" />
+                            <point x="0.866667" y="0.375" />
+                            <point x="0.933333" y="0.625" />
+                            <point x="0.8" y="0.8125" />
+                            <point x="0.6" y="0.9375" />
+                            <point x="0.266667" y="0.9375" />
+                            <point x="0.0666667" y="0.625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="mcdonalds" sid="646234584804267">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="149439747673407" speed="5">
+                    <frame duration="1" hotspotX="0.916667" hotspotY="0.615385" original-source="C:\Users\2dam\Desktop\Juego MC\Juego\assets\MCDonalds.png">
+                        <collision-poly>
+                            <point x="0.333333" y="0.0769231" />
+                            <point x="0.916667" y="0.615385" />
+                            <point x="0.916667" y="0.615385" />
+                            <point x="0.666667" y="0.846154" />
+                            <point x="0.0833333" y="0.615385" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="842963696664128">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Sprite2" sid="275929168706216">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="958284119482202" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\2dam\Downloads\Hamburguesa.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.25" />
+                            <point x="0.5625" y="0.4375" />
+                            <point x="0.59375" y="0.5" />
+                            <point x="0.59375" y="0.59375" />
+                            <point x="0.5" y="0.65625" />
+                            <point x="0.34375" y="0.65625" />
+                            <point x="0.1875" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="983950785788900">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="289059747135281">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="626100368967753" speed="5">
+                    <frame duration="1" hotspotX="0.344156" hotspotY="0.0384615" original-source="C:\Users\2dam\Downloads\Plataforma 2.png">
+                        <collision-poly>
+                            <point x="0.993506" y="0.0384615" />
+                            <point x="0.344156" y="0.961538" />
+                            <point x="0.00649351" y="0.0384615" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="carafeliz" sid="813302489095724">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="586701318893482" speed="5">
+                    <frame duration="1" hotspotX="0.588235" hotspotY="0.588235" original-source="C:\Users\2dam\Downloads\cara feliz.png">
+                        <collision-poly>
+                            <point x="0.176471" y="0.176471" />
+                            <point x="0.588235" y="0.0588235" />
+                            <point x="0.882353" y="0.294118" />
+                            <point x="0.941176" y="0.588235" />
+                            <point x="0.823529" y="0.823529" />
+                            <point x="0.588235" y="0.941176" />
+                            <point x="0.294118" y="0.882353" />
+                            <point x="0.0588235" y="0.588235" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Plataforma" sid="712520770399231">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="599318419883237">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="398406853206438" speed="5">
+                    <frame duration="1" hotspotX="0.344156" hotspotY="0.0384615" original-source="C:\Users\2dam\Downloads\Plataforma 2.png">
+                        <collision-poly>
+                            <point x="0.993506" y="0.0384615" />
+                            <point x="0.344156" y="0.961538" />
+                            <point x="0.00649351" y="0.0384615" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -91,7 +279,9 @@
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Keyboard" uid="7" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>

@@ -2,5 +2,28 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
-    <events />
+    <events>
+        <event-block sid="434295374066682">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="425479323906320" type="Prota" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="569856091007636" type="Prota">
+                    <param id="0" name="Animation">&quot;salto&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="539312376175844">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="662436025573380" type="Prota" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="576807446215880" type="Prota">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
